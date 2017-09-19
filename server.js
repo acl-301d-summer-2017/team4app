@@ -17,6 +17,25 @@ app.get('/', function(request, response ){
     response.sendFile('/index.html', {root: './public'} )
   
   });
+
+// app.get('http://api.brewerydb.com/v2/search?q=deschutes&type=brewery&key=e42ea843e038e8355fbd8c2717d0f5d3',(request, response)=>{
+//   alert(response);
+// });
+
+app.get('/', function(req, res, next) {
+  var url = "http://api.brewerydb.com/v2/search";
+  var q = req.query.q;
+
+  var Request = unirest
+      .get(url)
+      .query({key:config.key,q:q});
+
+  Request.end(function(response){
+      res.json(response.body);
+  });
+
+});
+
   
   app.listen(PORT, function() {
     console.log(`You are on port: ${PORT}`)
