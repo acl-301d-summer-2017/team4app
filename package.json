@@ -22,6 +22,9 @@
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "express-request-proxy": "^2.0.0",
-    "pg": "^7.3.0"
+    "jquery": "^3.2.1",
+    "pg": "^7.3.0",
+    "superagent": "^3.6.0",
+    "xmlhttprequest": "^1.8.0"
   }
 }
