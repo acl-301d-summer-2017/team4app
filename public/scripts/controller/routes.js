@@ -1,7 +1,7 @@
 'use strict';
 
 page( '/', );
-page( '' , );
+page( '/search' ,  );
 page( '/about' , );
 page.start();
 

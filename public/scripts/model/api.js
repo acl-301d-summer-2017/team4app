@@ -1,25 +1,20 @@
-// 'use strict';
-// var app = app || {};
+'use strict';
+var app = app || {};
+var test = '';
+var userInput = '';
+var url = '';
 
-// (function(module) {
-//   const repos = {};
+$('#search_form').on('submit', function(){
+    event.preventDefault();
+    console.log('i have been clicked')
+    test = $('#beer').val();
+    url =  test + '&type=beer';
+    $.get({
+        url: `/search/${url}`,
+        type: 'GET'
+    })
+    console.log(test);
+    console.log(url);
 
-//   repos.all = [];
+});
 
-//   repos.requestRepos = function(callback) {
-//     $.ajax ({
-//       url: 'http://api.brewerydb.com/v2/search?q=deschutes',
-//       method: 'GET',
-//       headers: {'Authorization': 'b6a67ef8872287ebd28b7d2e21a13386' }
-//     })
-//       .then (data=> {
-//         repos.all = data
-//         console.log(data)
-//         callback();
-//       })
-//     console.log ("data",repos.all);
-     
-//   }
-//   module.repos = repos;
-// })(app);
-// app.repos.requestRepos();
