@@ -18,16 +18,16 @@ app.get('/', function(request, response ){
   
   });
 
-app.get('/brewery', proxyBrewery );
-function proxyBrewery(request, response){
-superagent
- .get( 'http://api.brewerydb.com/v2/search?q=')
- .set('Authorization','e42ea843e038e8355fbd8c2717d0f5d3')
- .end(function( err, res){
-   console.log(JSON.parse(res.text)); 
-   response.send(res)
- })
-}
+// app.get('/brewery', proxyBrewery );
+// function proxyBrewery(request, response){
+// superagent
+//  .get( 'http://api.brewerydb.com/v2/search?q=')
+//  .set('Authorization','e42ea843e038e8355fbd8c2717d0f5d3')
+//  .end(function( err, res){
+//    console.log(JSON.parse(res.text)); 
+//    response.send(res)
+//  })
+// }
 
 app.get('/search/*', proxyBrewery );
 function proxyBrewery(request, response){
