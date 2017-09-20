@@ -6,8 +6,12 @@ function Beer (rawBeer) {
     this.styleId = rawBeer.styleId;
     this.abv = rawBeer.abv;
     this.isOrganic = rawBeer.isOrganic;
+    // var brew = JSON.parse(rawBeer.breweries);
+    // this.breweries = rawBeer.breweries.nameShortDisplay;
     this.addToArr();
     this.addToOptions();
+    this.saveToLocal();
+    console.log('what am i', rawBeer.breweries);
 }
 
 Beer.all = [];
@@ -25,3 +29,21 @@ Beer.prototype.addToOptions = function () {
     $('#select_two').append($option2);
 
 };
+
+Beer.prototype.saveToLocal = function() {
+    var localSavedData = JSON.stringify( this );
+    localStorage.setItem( Beer.all.length, localSavedData );
+};
+
+function getFromLocal( key ) {
+    return JSON.parse( localStorage.getItem( key ) );
+}
+
+if(localStorage) {
+    for(var i = 0; i < localStorage.length; i++ ){
+     var savedBeer = JSON.parse(localStorage.getItem( i + 1 ));
+     console.log(savedBeer);
+     new Beer(savedBeer);
+  
+    }
+  }

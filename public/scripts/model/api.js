@@ -7,7 +7,6 @@ var choice2 = '';
 $('#search_form').on('submit', function(){
     event.preventDefault();
     var buttonChoice;
-    //  $('input[name=radio]:checked', '#search_form').val() ? buttonChoice =  $('input[name=radio]:checked', '#search_form').val() : alert('Please choose button')
     buttonChoice = $('input[name=radio]:checked', '#search_form').val();
     if(buttonChoice){
     console.log('i have been clicked')
@@ -15,8 +14,8 @@ $('#search_form').on('submit', function(){
     choice2 = $('#choice2').val();
     var typeTest = choice1 + '&type=';
     var typeTest2 = choice2 + '&type=';
-   var selection = typeTest + buttonChoice;
-   var selection2 = typeTest2 + buttonChoice;
+   var selection = typeTest + buttonChoice + '&withBreweries=Y';
+   var selection2 = typeTest2 + buttonChoice + '&withBreweries=Y';
    console.log(selection)
     $.get({
         url: `/search/${selection}`,
@@ -46,15 +45,6 @@ $('#search_form').on('submit', function(){
     } else {alert('please choose a type')}
 });
 
-
-// function addOptions() {
-
-// for( var i = 0; i < Beer.all.length; i++ ){
-//     console.log(Beer.all, 'something');
-//     var $option = $('<option></option>').text(Beer.all[i].name);
-//     $('#select_one').append($option);
-//   };
-// }
 
 
 

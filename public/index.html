@@ -5,6 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
         <link href="https://cdnjs.com/libraries/normalize">
         <title>Team4</title>
+        <script id="beer-template" type="text/x-handlebars-template">
+                <section>
+                        <h1>{{name}}</h1>
+                        <p></p>
+
+                </section>
+        </script>
     </head>
     <body>
         <main>
@@ -12,8 +19,6 @@
 
         <div id="search_tab" href="/search">
                 <form id="search_form" action="search/">
-                        <!-- <input id="brewery_input" type="text" name="search">
-                        <input id="" type="submit" value="Submit"> -->
 
                   <fieldset id="button_choice">
                         <input id="choice1" type="text" name="search">
@@ -26,15 +31,30 @@
                         <input id="beer_choice" type="radio" value="beer" name="radio">
                         <label for="beer_choice">Beer</label>
                   </fieldset>
-                  
-                  <select id="select_one" name="select"> <!--Supplement an id here instead of using 'name'-->
-                       
+
+                  <select id="select_one" name="select">
                   </select>
 
-                  <select id="select_two" name="select"> <!--Supplement an id here instead of using 'name'-->
-                    
+                  <select id="select_two" name="select">
                   </select>
+
                 </form>
+        </div>
+        <div id="container">
+                <div id="option_one">
+                        
+                <div>
+
+                </div>
+
+                </div>
+                <div id="option_two">
+                       
+                <div>
+
+                </div>
+
+                </div>
         </div>
 
         </main>
