@@ -11,6 +11,8 @@ function Beer(rawBeer) {
         brewery = rawBeer.breweries[0].nameShortDisplay;
     } else { brewery = rawBeer.brewery; }
     this.brewery = brewery;
+    var beerTemplate = this.toHtml();
+    this.html = beerTemplate;
     this.addToArr();
     this.addToOptions();
     this.saveToLocal();
@@ -33,9 +35,14 @@ Beer.prototype.addToOptions = function() {
 
 };
 
+Beer.prototype.toHtml = function() {
+    let template = Handlebars.compile($('#beer-template').text());
+    return template(this)
+}
+
 Beer.prototype.saveToLocal = function() {
     var localSavedData = JSON.stringify(this);
-    localStorage.setItem(Beer.all.length, localSavedData);
+    localStorage.setItem(Beer.all.length * 2 , localSavedData);
 };
 
 function getFromLocal(key) {
@@ -43,10 +50,12 @@ function getFromLocal(key) {
 }
 
 if (localStorage) {
-    for (var i = 0; i < localStorage.length; i++) {
-        var savedBeer = JSON.parse(localStorage.getItem(i + 1));
-        console.log(savedBeer);
-        new Beer(savedBeer);
-
+    for (var i = 1; i < localStorage.length; i++) {
+        if (localStorage.getItem(i*2)) {
+            var savedBeer = JSON.parse(localStorage.getItem(i * 2 ));
+            console.log('index' , i * 2)
+            console.log(savedBeer);
+            new Beer(savedBeer);
+        }
     }
 }

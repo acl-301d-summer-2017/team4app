@@ -23,10 +23,12 @@ $('#search_form').on('submit', function() {
             })
             .then(dataObj => {
                 if (buttonChoice === 'beer') {
-                    new Beer(dataObj)
+                  $('#option_one').empty();
                     console.log('in the beer then statement');
-                } else { 
-                  breweryAppend(new Brewery(dataObj));
+                    beerAppendOne(new Beer(dataObj));
+                } else {
+                  $('#option_one').empty(); 
+                  new Brewery(dataObj);
                 }
                 // console.log(dataObj);
             })
@@ -36,13 +38,15 @@ $('#search_form').on('submit', function() {
             })
             .then(dataObj => {
                 if (buttonChoice === 'brewery') {
+                  $('#option_two').empty();
                     new Brewery(dataObj)
                     console.log('in the brewery then statement');
-                } else { new Beer(dataObj) }
-                // console.log(Brewery.all);
-                // console.log(Beer.all);
-                // console.log(dataObj);
+                } else { 
+                  $('#option_two').empty();
+                  beerAppendTwo(new Beer(dataObj))
+                 }
             })
 
     } else { alert('please choose a type') }
+    event.target.reset();
 });

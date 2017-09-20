@@ -21,13 +21,13 @@ app.get('/', function(request, response ){
 
 app.get('/search/*', proxyBrewery );
 function proxyBrewery(request, response){
-  console.log(request.params[0]);
+  // console.log(request.params[0]);
   superagent
   .get( `http://api.brewerydb.com/v2/search?q=${request.params[0]}` )
   .set('Authorization','e42ea843e038e8355fbd8c2717d0f5d3')
   .end(function( err, res){
-    console.log('i have been getted ' + `http://api.brewerydb.com/v2search?q=${request.params[0]}`)
-    console.log(JSON.parse(res.text));
+    // console.log('i have been getted ' + `http://api.brewerydb.com/v2search?q=${request.params[0]}`)
+    // console.log(JSON.parse(res.text));
     if (JSON.parse(res.text).totalResults) {
    // console.log(JSON.parse(res.text).data); 
     var beerObj = JSON.parse(res.text).data[0];
@@ -36,6 +36,19 @@ function proxyBrewery(request, response){
   })
 }
 
+app.get('/brewery/*', breweryId );
+function breweryId(request, response){
+  console.log(request.params[0]);
+  superagent
+  .get( `http://api.brewerydb.com/v2/brewery/${request.params[0]}/beers` )
+  .set('Authorization','e42ea843e038e8355fbd8c2717d0f5d3')
+  .end(function( err, res){
+    console.log('i have been getted ' + `http://api.brewerydb.com/v2/brewery/${request.params[0]}/beers`)
+   var beerLength = JSON.parse(res.text).data;
+   response.send(beerLength);
+   console.log('i am res.data' , beerLength);
+  })
+}
 
 
   app.listen(PORT, function() {
