@@ -25,8 +25,9 @@ $('#search_form').on('submit', function(){
       .then(dataObj => {
         if(buttonChoice === 'beer'){
         new Beer(dataObj)
+        console.log('in the beer then statement');
         } else {new Brewery(dataObj)}
-        console.log(dataObj);
+        // console.log(dataObj);
       })
     $.get({
         url: `/search/${selection2}`,
@@ -35,14 +36,25 @@ $('#search_form').on('submit', function(){
       .then(dataObj => {
         if(buttonChoice === 'brewery'){
         new Brewery(dataObj)
+        console.log('in the brewery then statement');
         } else {new Beer(dataObj)}
-      console.log(Brewery.all);
-      console.log(Beer.all);
-      console.log(dataObj);
+      // console.log(Brewery.all);
+      // console.log(Beer.all);
+      // console.log(dataObj);
       })
     
     } else {alert('please choose a type')}
 });
+
+
+// function addOptions() {
+
+// for( var i = 0; i < Beer.all.length; i++ ){
+//     console.log(Beer.all, 'something');
+//     var $option = $('<option></option>').text(Beer.all[i].name);
+//     $('#select_one').append($option);
+//   };
+// }
 
 
 
