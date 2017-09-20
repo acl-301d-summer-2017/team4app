@@ -1,10 +1,16 @@
 'use strict';
 
-function Beer () {
-    this.id = id;
-    this.name = name;
-    this.styleId = styleId;
-    this.abv = abv;
-    this.isOrganic = isOrganic;
-
+function Beer (rawBeer) {
+    this.id = rawBeer.id;
+    this.name = rawBeer.name;
+    this.styleId = rawBeer.styleId;
+    this.abv = rawBeer.abv;
+    this.isOrganic = rawBeer.isOrganic;
+    this.addToArr();
 }
+
+Beer.all = [];
+Beer.prototype.addToArr = function(){
+    Beer.all.push(this);
+
+};
