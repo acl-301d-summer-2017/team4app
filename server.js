@@ -37,8 +37,10 @@ function proxyBrewery(request, response){
   .set('Authorization','e42ea843e038e8355fbd8c2717d0f5d3')
   .end(function( err, res){
     console.log('i have been getted ' + `http://api.brewerydb.com/v2search?q=${request.params[0]}`)
-    console.log(JSON.parse(res.text)); 
-    response.send(res)
+   // console.log(JSON.parse(res.text).data); 
+    var beerObj = JSON.parse(res.text).data[0];
+    //console.log(beerObj.id);
+    response.send(beerObj)
   })
 }
 
