@@ -1,81 +1,73 @@
 <!DOCTYPE html>
-<html lang="en" >
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-        <link href="https://cdnjs.com/libraries/normalize">
-        <title>Team4</title>
-        <script id="beer-template" type="text/x-handlebars-template">
-                <section>
-                        <h1>{{name}}</h1>
-                        <p></p>
+<html lang="en">
 
-                </section>
-        </script>
-    </head>
-    <body>
-        <main>
-                <h1>INDEX.HTML</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <link href="https://cdnjs.com/libraries/normalize">
+    <title>Team4</title>
+    <script id="beer-template" type="text/x-handlebars-template">
+        <section>
+            <h1>{{name}}</h1>
+            <p>{{brewery}}</p>
+            <p>{{styleId}}</p>
+            <p>{{abv}}</p>
+            <div>{{isOrganic}}</div>
+        </section>
+    </script>
+    <script id="brewery-template" type="text/x-handlebars-template">
+        <section>
+            <h1>{{name}}</h1>
+            <p>{{established}}</p>
+            <p>{{isMassOwned}}</p>
+            <p>{{totalBeers}}</p>
+            <div>{{isOrganic}}</div>
+        </section>
+    </script>
+</head>
 
+<body>
+    <main>
+        <h1>INDEX.HTML</h1>
         <div id="search_tab" href="/search">
-                <form id="search_form" action="search/">
-
-                  <fieldset id="button_choice">
-                        <input id="choice1" type="text" name="search">
-                        <input id="choice2" type="text" name="search">
-                        <input id="submit" type="submit" value="Submit">
-
-                        <input id="brewery_choice" type="radio" value="brewery" name="radio">
-                        <label for="brewery_choice">Brewery</label>
-
-                        <input id="beer_choice" type="radio" value="beer" name="radio">
-                        <label for="beer_choice">Beer</label>
-                  </fieldset>
-
-                  <select id="select_one" name="select">
-                  </select>
-
-                  <select id="select_two" name="select">
-                  </select>
-
-                </form>
+            <form id="search_form" action="search/">
+                <fieldset id="button_choice">
+                    <input id="choice1" type="text" name="search">
+                    <input id="choice2" type="text" name="search">
+                    <input id="submit" type="submit" value="Submit">
+                    <input id="brewery_choice" type="radio" value="brewery" name="radio">
+                    <label for="brewery_choice">Brewery</label>
+                    <input id="beer_choice" type="radio" value="beer" name="radio">
+                    <label for="beer_choice">Beer</label>
+                </fieldset>
+                <select id="select_one" name="select">
+                </select>
+                <select id="select_two" name="select">
+                </select>
+            </form>
         </div>
         <div id="container">
-                <div id="option_one">
-                        
-                <div>
-
-                </div>
-
-                </div>
-                <div id="option_two">
-                       
-                <div>
-
-                </div>
-
-                </div>
+            <div id="option_one">
+            </div>
+            <div id="option_two">
+            </div>
         </div>
+    </main>
+    <!-- ============================= Scripts for Libaries ======================================= -->
+    <script src="vendors/jquery-3.2.1.js"></script>
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+    <!-- ============================= Scripts for Models ========================================= -->
+    <script src="scripts/model/api.js"></script>
+    <script src="scripts/model/beerModel.js"></script>
+    <script src="scripts/model/breweryModel.js"></script>
+    <!-- ============================= Scripts for Views ========================================= -->
+    <!-- <script src="scripts/view/selectView.js"></script> -->
+    <script src="scripts/view/breweryView.js"></script>
+    <!-- ============================= Scripts for Controllers =================================== -->
+    <script src=""></script>
+    <script src=""></script>
+    <script src=""></script>
+</body>
 
-        </main>
-<!-- ============================= Scripts for Libaries ======================================= -->
-        <script src="vendors/jquery-3.2.1.js"></script>
-        <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
-
-<!-- ============================= Scripts for Models ========================================= -->
-        <script src="scripts/model/api.js"></script>
-        <script src="scripts/model/beerModel.js"></script>
-        <script src="scripts/model/breweryModel.js"></script>
-
-<!-- ============================= Scripts for Views ========================================= -->
-        <!-- <script src="scripts/view/selectView.js"></script> -->
-        <script src=""></script>
-
-<!-- ============================= Scripts for Controllers =================================== -->
-        <script src=""></script>
-        <script src=""></script>
-        <script src=""></script>
-
-    </body>
 </html>
