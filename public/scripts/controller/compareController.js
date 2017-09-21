@@ -6,7 +6,6 @@ var app = app || {};
   const compareController = {};
 
   compareController.index = () => {
-    console.log('compareController has loaded')
     $('#landing').hide()
     $('#about').hide();
     $('#hide_main').show()

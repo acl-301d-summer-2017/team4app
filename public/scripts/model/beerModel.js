@@ -1,63 +1,73 @@
 'use strict';
 
+//Creates Beer obj instance.
 function Beer(rawBeer) {
     this.id = rawBeer.id;
     this.name = rawBeer.name;
     this.styleId = rawBeer.styleId;
     this.abv = rawBeer.abv;
     this.isOrganic = rawBeer.isOrganic;
+    this.readyForDOM(rawBeer);
+}
+
+Beer.all = [];
+
+//Fills in the remaining property 'brewery'.
+//Adds a property 'html' which holds an html element.
+//Adds Beer object instance into the 'Beer.all' array.
+//Adds a new Beer option to the select forms.
+//Saves Beer object instance data to local storage. 
+Beer.prototype.readyForDOM = function (rawBeer) {
+    this.addExtraProperties(rawBeer);
+    this.createHTMLele();
+    this.addToArr();
+    this.addToOptions();
+    this.saveToLocal();
+};
+
+//Adds extra properties which must be collected with differnt methods when
+//using data from a BreweryDB API Query as opposed to using data from local storage
+Beer.prototype.addExtraProperties = function (rawBeer) {
     var brewery;
     if (rawBeer.status) {
         brewery = rawBeer.breweries[0].nameShortDisplay;
     } else { brewery = rawBeer.brewery; }
     this.brewery = brewery;
-    var beerTemplate = this.toHtml();
-    this.html = beerTemplate;
-    this.addToArr();
-    this.addToOptions();
-    this.saveToLocal();
-    console.log('what am i', rawBeer.breweries);
-}
-
-Beer.all = [];
-Beer.prototype.addToArr = function() {
-    Beer.all.push(this);
-
 };
 
-Beer.prototype.addToOptions = function() {
+//Creates an HTML element with handlebars.js with information from the properties of the object instance.
+Beer.prototype.createHTMLele = function () {
+    var template = Handlebars.compile($('#beer-template').text());
+    var beerTemplate = template(this);
+    this.html = beerTemplate;
+};
 
+//Adds Beer object instance to 'Beer.all' array. 
+Beer.prototype.addToArr = function () {
+    Beer.all.push(this);
+};
+
+//Creates an appends to two duplicate option elemnts corresponding to the name
+//of the Beer object instance then appends one to each select form. 
+Beer.prototype.addToOptions = function () {
     console.log(Beer.all, 'something');
     var $option = $('<option></option>').text(this.name);
     var $option2 = $('<option></option>').text(this.name);
     $('#select_one').append($option);
     $('#select_two').append($option2);
-
 };
 
-Beer.prototype.toHtml = function() {
-    let template = Handlebars.compile($('#beer-template').text());
-    return template(this)
-}
-
-Beer.prototype.saveToLocal = function() {
+//Saves Beer object instance data to local storage with even numbered key values.
+Beer.prototype.saveToLocal = function () {
     var localSavedData = JSON.stringify(this);
-    localStorage.setItem(Beer.all.length * 2 , localSavedData);
+    localStorage.setItem(Beer.all.length * 2, localSavedData);
 };
 
-function getFromLocal(key) {
-    return JSON.parse(localStorage.getItem(key));
-}
-
-//console.log('pulling from local storage');
-//function getBeerStorage(){
+//If local storage data exists pulls down all data with even number key values corresponding to Beer object data.
 if (localStorage) {
-    for (var i = 1; i < localStorage.length; i++) {
-        if (localStorage.getItem(i*2)) {
-            var savedBeer = JSON.parse(localStorage.getItem(i * 2 ));
-            console.log('index' , i * 2)
-            console.log(savedBeer);
-            console.log('pulling from local storage')
+    for (var i = 1; i < localStorage.length + 1; i++) {
+        if (localStorage.getItem(i * 2)) {
+            var savedBeer = JSON.parse(localStorage.getItem(i * 2));
             new Beer(savedBeer);
         }
     }
