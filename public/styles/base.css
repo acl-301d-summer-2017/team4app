@@ -1,16 +1,106 @@
+
 #option_one_container{
     border: solid;
     
-}
-
-#select_one{
-    margin: 0 auto;
 }
 
 #option_two_container{
     border: solid;
 }
 
-#container{
-    display: flex;
+::-webkit-input-placeholder {
+	color: rgba(255, 255, 255, .3);
+}
+
+main {
+	display: grid;
+	grid-template-rows: 2fr 1fr 15fr;
+	grid-template-columns: 1fr;
+	grid-row-gap: 1rem;
+}
+
+main > h1 {
+	grid-row: 1 / 2;
+}
+
+
+#search_tab{
+	grid-row: 2 / 3;
+}
+
+#container {
+	grid-row: 3 / 4;
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 1rem; 
+
+}
+
+#option_one_container {
+	grid-column: 1 / 2;
+	display: grid;
+	grid-template-rows: auto 1fr;
+	
+}
+
+#select_one {
+	grid-row: 1 / 2;
+}
+
+#option_one {
+	grid-row: 2 / 3;
+	display: grid;
+}
+
+#beerGrid {
+	display: grid;
+	grid-template-rows: 2fr 1fr 1fr 1fr 1fr;
+}
+
+#beerGrid > h1 {
+	grid-row: 1 / 2;
+}
+
+#brewery-name {
+	grid-row: 2 / 3
+}
+
+#style-id {
+	grid-row: 3 / 4;
+}
+
+#beer-abv {
+	grid-row: 4 / 5;
+}
+
+#beerGrid > div {
+	grid-row: 5 / 6;
+}
+
+
+#option_two_container {
+	grid-column: 2 / 3;
+	display: grid;
+}
+
+#select_two {
+	grid-row: 1 / 2;
+}
+
+#option_two {
+	grid-row: 2 / 3;
+	display: grid;
+}
+
+fieldset {
+	border: none;
+}
+
+input {
+	border: none;
+	outline: 0;
+	background-color: rgba(255, 255, 255, .3);
+	color: rgba(255, 255, 255, 1);
+	text-align:center;
 }

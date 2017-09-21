@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <link href="https://cdnjs.com/libraries/normalize">
     <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/theme.css">
     <title>Team4</title>
     <script id="beer-template" type="text/x-handlebars-template">
-        <section>
+        <section id="beerGrid">
             <h1>{{name}}</h1>
-            <p>{{brewery}}</p>
-            <p>{{styleId}}</p>
-            <p>{{abv}}</p>
+            <p id="brewery-name">{{brewery}}</p>
+            <p id="style-id">{{styleId}}</p>
+            <p id="beer-abv">{{abv}}</p>
             <div>{{isOrganic}}</div>
         </section>
     </script>
     <script id="brewery-template" type="text/x-handlebars-template">
-        <section>
+        <section id="breweryGrid">
             <h1>{{name}}</h1>
             <p>{{established}}</p>
             <p>{{isMassOwned}}</p>
@@ -46,48 +47,40 @@
                     <input id="beer_choice" type="radio" value="beer" name="radio">
                     <label for="beer_choice">Beer</label>
                 </fieldset>
-                
-                
             </form>
         </div>
         <div id="container">
             <div id="option_one_container">
-                    <select id="select_one" name="select">
-                            <option>pick a beer/brewery</option>
-                        </select>
+                <select id="select_one" name="select">
+                    <option>pick a beer/brewery</option>
+                </select>
                 <div id="option_one">
                 </div>
             </div>
             <div id="option_two_container">
-                    <select id="select_two" name="select">
-                            <option>pick a beer/brewery</option>
-                        </select>
+                <select id="select_two" name="select">
+                    <option>pick a beer/brewery</option>
+                </select>
                 <div id="option_two">
                 </div>
             </div>
         </div>
     </main>
-
     <section id="about">
         <h1>About Page</h1>
     </section>
-
-
     <!-- ============================= Scripts for Libaries ======================================= -->
     <script src="vendors/jquery-3.2.1.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
-
     <!-- ============================= Scripts for Models ========================================= -->
     <script src="scripts/model/api.js"></script>
     <script src="scripts/model/beerModel.js"></script>
     <script src="scripts/model/breweryModel.js"></script>
-
     <!-- ============================= Scripts for Views ========================================= -->
     <script src=""></script>
     <script src="scripts/view/beerView.js"></script>
     <script src="scripts/view/breweryView.js"></script>
-    
     <!-- ============================= Scripts for Controllers =================================== -->
     <script src="scripts/controller/landingController.js"></script>
     <script src="scripts/controller/compareController.js"></script>
