@@ -7,9 +7,16 @@ function Brewery(rawBrewery) {
     this.isOrganic = rawBrewery.isOrganic;
     this.isMassOwned = rawBrewery.isMassOwned;
     this.description = rawBrewery.description;
-    this.getBeerList();
+    this.selector = rawBrewery.selector;
+    
+    if (!rawBrewery.beerCount){this.getBeerList();}else{
+        this.beerCount = rawBrewery.beerCount;
+        this.html = rawBrewery.html;
+        this.addToArr();
+     }
     this.addToOptions();
     console.log(this)
+    console.log('after connstruction', Brewery.all)
 }
 
 Brewery.all = [];
@@ -35,7 +42,9 @@ Brewery.prototype.getBeerList = function () {
         this.html = brewTemplate;
         this.addToArr();
         this.saveToLocal();
-        breweryAppend(this);
+        if(this.selector === 1){
+        breweryAppendOne(this);
+        } else {breweryAppendTwo(this)}
     })
 }
 
@@ -55,12 +64,13 @@ Brewery.prototype.saveToLocal = function() {
     };
 
     if (localStorage) {
-        for (var i = 1; i < localStorage.length; i++) {
+        for (var i = 1; i < localStorage.length + 1; i++) {
             if (localStorage.getItem( ( i * 2 ) + 1 ) ) {
                 var savedBrewery = JSON.parse(localStorage.getItem( (i * 2) + 1 ) );
-                console.log('index' , (i * 2) + 1 )
-                console.log(savedBrewery);
+                //console.log('index' , (i * 2) + 1 )
+                console.log('pulling breweries to local storage', savedBrewery);
                 new Brewery(savedBrewery);
             }
         }
     }
+    

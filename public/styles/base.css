@@ -1,0 +1,16 @@
+#option_one_container{
+    border: solid;
+    
+}
+
+#select_one{
+    margin: 0 auto;
+}
+
+#option_two_container{
+    border: solid;
+}
+
+#container{
+    display: flex;
+}

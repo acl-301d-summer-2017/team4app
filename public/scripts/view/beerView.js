@@ -14,12 +14,33 @@ function beerAppendTwo(dataObj) {
 }
 
 $('#select_one').on('change', () => {
-    let $selection = $('#select_one').val();
-    Beer.all.forEach(x => x.name === $selection ? beerAppendOne(x) : console.log('turnery failed in S1Beer'))
+    var $selection = $('#select_one').val();
+    console.log('selection:' , $selection);
+    console.log('Brewery Objects',Brewery.all);
+    console.log('Beer Objects',Beer.all);
+    Beer.all.forEach(function(x){
+        if(x.name === $selection){
+            beerAppendOne(x); 
+        }
+    })
+    Brewery.all.forEach(function(x){
+        if(x.name === $selection){
+            breweryAppendOne(x); 
+        }
+    })
 })
 
 $('#select_two').on('change', () => {
-    let $selection = $('#select_two').val();
-    Beer.all.forEach(x => x.name === $selection ? beerAppendTwo(x) : console.log('turnery failed in S2Beer'))
+    var $selection = $('#select_two').val();
+    Beer.all.forEach(function(x){
+        if(x.name === $selection){
+            beerAppendTwo(x); 
+        }
+    })
+    Brewery.all.forEach(function(x){
+        if(x.name === $selection){
+            breweryAppendTwo(x); 
+        }
+    })
 })
-
+    

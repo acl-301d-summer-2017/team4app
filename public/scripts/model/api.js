@@ -1,9 +1,7 @@
 'use strict';
 var app = app || {};
 var choice1 = '';
-var choice2 = '';
-
-function foo = 
+var choice2 = ''; 
 
 
 $('#search_form').on('submit', function() {
@@ -29,6 +27,7 @@ $('#search_form').on('submit', function() {
                     beerAppendOne(new Beer(dataObj));
                 } else {
                     $('#option_one').empty();
+                    dataObj.selector = 1;
                     new Brewery(dataObj);
                 }
                 // console.log(dataObj);
@@ -40,6 +39,7 @@ $('#search_form').on('submit', function() {
             .then(dataObj => {
                 if (buttonChoice === 'brewery') {
                     $('#option_two').empty();
+                    dataObj.selector = 2;
                     new Brewery(dataObj)
                     console.log('in the brewery then statement');
                 } else {
