@@ -7,6 +7,7 @@ function Beer(rawBeer) {
     this.styleId = rawBeer.styleId;
     this.abv = rawBeer.abv;
     this.isOrganic = rawBeer.isOrganic;
+    this.description = rawBeer.description;
     this.readyForDOM(rawBeer);
 }
 
