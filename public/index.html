@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <link href="https://cdnjs.com/libraries/normalize">
+    <link rel="stylesheet" href="styles/base.css">
     <title>Team4</title>
     <script id="beer-template" type="text/x-handlebars-template">
         <section>
@@ -41,16 +42,24 @@
                     <input id="beer_choice" type="radio" value="beer" name="radio">
                     <label for="beer_choice">Beer</label>
                 </fieldset>
-                <select id="select_one" name="select">
-                </select>
-                <select id="select_two" name="select">
-                </select>
+                
+                
             </form>
         </div>
         <div id="container">
-            <div id="option_one">
+            <div id="option_one_container">
+                    <select id="select_one" name="select">
+                            <option>pick a beer/brewery</option>
+                        </select>
+                <div id="option_one">
+                </div>
             </div>
-            <div id="option_two">
+            <div id="option_two_container">
+                    <select id="select_two" name="select">
+                            <option>pick a beer/brewery</option>
+                        </select>
+                <div id="option_two">
+                </div>
             </div>
         </div>
     </main>
@@ -64,8 +73,8 @@
     <script src="scripts/model/breweryModel.js"></script>
     <!-- ============================= Scripts for Views ========================================= -->
     <!-- <script src="scripts/view/selectView.js"></script> -->
-    <script src="scripts/view/breweryView.js"></script>
     <script src="scripts/view/beerView.js"></script>
+    <script src="scripts/view/breweryView.js"></script>
     <!-- ============================= Scripts for Controllers =================================== -->
     <script src=""></script>
     <script src=""></script>

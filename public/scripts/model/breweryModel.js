@@ -8,13 +8,15 @@ function Brewery(rawBrewery) {
     this.isMassOwned = rawBrewery.isMassOwned;
     this.description = rawBrewery.description;
     this.selector = rawBrewery.selector;
-
+    
     if (!rawBrewery.beerCount){this.getBeerList();}else{
         this.beerCount = rawBrewery.beerCount;
+        this.html = rawBrewery.html;
         this.addToArr();
      }
     this.addToOptions();
     console.log(this)
+    console.log('after connstruction', Brewery.all)
 }
 
 Brewery.all = [];
@@ -62,11 +64,11 @@ Brewery.prototype.saveToLocal = function() {
     };
 
     if (localStorage) {
-        for (var i = 1; i < localStorage.length; i++) {
+        for (var i = 1; i < localStorage.length + 1; i++) {
             if (localStorage.getItem( ( i * 2 ) + 1 ) ) {
                 var savedBrewery = JSON.parse(localStorage.getItem( (i * 2) + 1 ) );
-                console.log('index' , (i * 2) + 1 )
-                console.log(savedBrewery);
+                //console.log('index' , (i * 2) + 1 )
+                console.log('pulling breweries to local storage', savedBrewery);
                 new Brewery(savedBrewery);
             }
         }
