@@ -18,6 +18,16 @@ app.get('/', function(request, response ){
   
   });
 
+app.get('/compare', function(request, response ){
+    response.sendFile('/index.html', {root: './public'} )
+  
+  });
+
+app.get('/about', function(request, response ){
+    response.sendFile('/index.html', {root: './public'} )
+  
+  });
+
 
 app.get('/search/*', proxyBrewery );
 function proxyBrewery(request, response){
@@ -55,34 +65,6 @@ function breweryId(request, response){
     console.log(`You are on port: ${PORT}`)
   });
 
-  function loadDB() {
-    client.query(`
-      CREATE TABLE IF NOT EXISTS
-      brewery (
-        id UNIQUE NOT NULL,
-        name VARCHAR(255) UNIQUE NOT NULL,
-        established,
-        isOrganic,
-        isMassOwned,
-        totalResults
-      );`
-    )
-    .then()
-    .catch(console.error);
-  
-    client.query(`
-      CREATE TABLE IF NOT EXISTS
-      beer (
-        id UNIQUE NOT NULL,
-        name VARCHAR (255),
-        styleId,
-        abv,
-        isOrganic ,
-      );`
-    )
-    .then()
-    .catch(console.error);
-  }
   
   
 
