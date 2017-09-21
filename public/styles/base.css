@@ -86,6 +86,7 @@ main > h1 {
 #option_two_container {
 	grid-column: 2 / 3;
 	display: grid;
+	grid-template-rows: auto 1fr;
 }
 
 #select_two {
@@ -107,4 +108,8 @@ input {
 	background-color: rgba(255, 255, 255, .3);
 	color: rgba(255, 255, 255, 1);
 	text-align:center;
+}
+
+.hidden {
+	display: none;
 }

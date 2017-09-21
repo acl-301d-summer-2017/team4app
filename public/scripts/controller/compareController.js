@@ -6,7 +6,8 @@ var app = app || {};
   const compareController = {};
 
   compareController.index = () => {
-    $('#landing').hide()
+    $('#hops').fadeOut(700);
+    $('#hops').hide('initial');
     $('#about').hide();
     $('#hide_main').show()
   };
