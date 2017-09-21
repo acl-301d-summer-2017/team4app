@@ -6,7 +6,6 @@ var app = app || {};
   const landingController = {};
 
   landingController.index = () => {
-    console.log('landingController has loaded')
     $('#hide_main').hide()
     $('#about').hide()
     $('#landing').show()
