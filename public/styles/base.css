@@ -85,8 +85,8 @@ main > h1 {
 
 #option_two_container {
 	grid-column: 2 / 3;
-	display: grid;
-	grid-template-rows: auto 1fr;
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
 #select_two {
