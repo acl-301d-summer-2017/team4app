@@ -29,8 +29,12 @@
 </head>
 
 <body>
-    <main>
+    <section id="landing" href="/">
+        <p><a href="/compare">Testing Landing</a></p>
+    </section>
+    <main id="hide_main">
         <h1>INDEX.HTML</h1>
+        <p><a href="/about">About</a></p>
         <div id="search_tab" href="/search">
             <form id="search_form" action="search/">
                 <fieldset id="button_choice">
@@ -63,21 +67,32 @@
             </div>
         </div>
     </main>
+
+    <section id="about">
+        <h1>About Page</h1>
+    </section>
+
+
     <!-- ============================= Scripts for Libaries ======================================= -->
     <script src="vendors/jquery-3.2.1.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+
     <!-- ============================= Scripts for Models ========================================= -->
     <script src="scripts/model/api.js"></script>
     <script src="scripts/model/beerModel.js"></script>
     <script src="scripts/model/breweryModel.js"></script>
+
     <!-- ============================= Scripts for Views ========================================= -->
-    <!-- <script src="scripts/view/selectView.js"></script> -->
+    <script src=""></script>
     <script src="scripts/view/beerView.js"></script>
     <script src="scripts/view/breweryView.js"></script>
+    
     <!-- ============================= Scripts for Controllers =================================== -->
-    <script src=""></script>
-    <script src=""></script>
+    <script src="scripts/controller/landingController.js"></script>
+    <script src="scripts/controller/compareController.js"></script>
+    <script src="scripts/controller/aboutController.js"></script>
+    <script src="scripts/controller/routes.js"></script>
     <script src=""></script>
 </body>
 

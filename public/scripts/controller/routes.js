@@ -1,7 +1,7 @@
 'use strict';
 
-page( '/', );
-page( '/search' ,  );
-page( '/about' , );
+page( '/', app.landingController.index );
+page( '/compare' , app.compareController.index );
+page( '/about' , app.aboutController.index );
 page.start();
 
