@@ -7,7 +7,12 @@ function Brewery(rawBrewery) {
     this.isOrganic = rawBrewery.isOrganic;
     this.isMassOwned = rawBrewery.isMassOwned;
     this.description = rawBrewery.description;
-    this.getBeerList();
+    this.selector = rawBrewery.selector;
+
+    if (!rawBrewery.beerCount){this.getBeerList();}else{
+        this.beerCount = rawBrewery.beerCount;
+        this.addToArr();
+     }
     this.addToOptions();
     console.log(this)
 }
@@ -35,7 +40,9 @@ Brewery.prototype.getBeerList = function () {
         this.html = brewTemplate;
         this.addToArr();
         this.saveToLocal();
-        breweryAppend(this);
+        if(this.selector === 1){
+        breweryAppendOne(this);
+        } else {breweryAppendTwo(this)}
     })
 }
 
@@ -64,3 +71,4 @@ Brewery.prototype.saveToLocal = function() {
             }
         }
     }
+    
