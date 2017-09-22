@@ -9,3 +9,35 @@
     background: #0E38B1;
     color: rgba(255, 255, 255, 1);
     }
+
+    /* div.styled-select { margin: 20px; } */
+
+    .styled-select {
+        margin: 0 auto;
+        height: 29px;
+        overflow: hidden;
+        width: 240px;
+     }
+     
+     .styled-select select {
+        background: transparent;
+        border: none;
+        font-size: 14px;
+        height: 29px;
+        padding: 5px; /* If you add too much padding here, the options won't show in IE */
+        width: 268px;
+     }
+     
+     .black   { background-color: rgba(255, 255, 255, .2);; }
+     
+     .black select   { color: rgba(255, 255, 255, .4); }
+     
+     select:active, select:hover {
+         outline: none
+       }
+     
+     select:focus {
+         outline: none !important;
+     }
+
+    
