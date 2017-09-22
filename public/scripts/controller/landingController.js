@@ -6,6 +6,7 @@ var app = app || {};
   landingController.index = () => {
     $('#hide_main').hide()
     $('#about').hide()
+    $('#hide_main').removeClass()
     $('#landing').show()
     console.log('working');
   }
