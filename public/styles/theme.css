@@ -1,10 +1,7 @@
-@font-face {
-    font-family: "mouser";
-    src: url("styles/fonts/mouser.ttf") format("ttf");
-    }
+
     
     body {
-    font-family: mouser;
+    font-family: 'Arimo', sans-serif;
     letter-spacing: .25rem;
     background: #0E38B1;
     color: rgba(255, 255, 255, 1);

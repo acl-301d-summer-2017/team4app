@@ -1,4 +1,40 @@
-#hops {
-	height: 200px;
-	width: ;
+
+#daddy_div {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.profile {
+	display: flex;
+	justify-content: center;
+	/* border: solid; */
+}
+
+.profile img {
+	border: solid;
+	width: 50%;
+	height: 50%;
+}
+
+.bio {
+	display: flex;
+	justify-content: center;
+	/* border: solid; */
+}
+
+#about h1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.name_div {
+	width: 25%;
+	height: 100%;
+}
+
+#search_tab {
+	display: flex;
+	justify-content: center;
 }
