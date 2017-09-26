@@ -1,9 +1,11 @@
 #option_one_container{
+	padding-left: 1em;
     border: solid;
     
 }
 
 #option_two_container{
+	padding-left: 1em;
     border: solid;
 }
 
@@ -96,6 +98,13 @@ main > h1 {
 #option_two {
 	grid-row: 2 / 3;
 	display: grid;
+}
+
+#hops {
+	height: 25em !important;
+	width: 25em !important;
+	margin-left: 26em !important;
+	margin-top: 8em !important;
 }
 
 fieldset {

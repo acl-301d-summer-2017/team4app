@@ -5,27 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <link href="https://cdnjs.com/libraries/normalize">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="styles/layout.css">
     <title>Team4</title>
     <script id="beer-template" type="text/x-handlebars-template">
         <section id="beerGrid">
             <h1>{{name}}</h1>
-            <p id="brewery-name">{{brewery}}</p>
-            <p id="style-id">{{styleId}}</p>
-            <p id="beer-abv">{{abv}}</p>
-            <div>{{isOrganic}}</div>
+            <p id="brewery-name"><b>Brewery:</b> {{brewery}}</p>
+            <p id="style-id"><b>Style Id: </b>{{styleId}}</p>
+            <p id="beer-abv"><b>ABV: </b>{{abv}}</p>
+            <div><b>Organic: </b>{{isOrganic}}</div>
             <p>{{description}}</p>
         </section>
     </script>
     <script id="brewery-template" type="text/x-handlebars-template">
         <section id="breweryGrid">
             <h1>{{name}}</h1>
-            <p>{{established}}</p>
-            <p>{{isMassOwned}}</p>
+            <p><b>Established: </b>{{established}}</p>
+            <p><b>Mass Owned: </b>{{isMassOwned}}</p>
+            <p><b>Total Beers: </b>{{beerCount}}</p>
+            <div><b>Organic: </b>{{isOrganic}}</div>
             <p>{{description}}</p>
-            <p>{{beerCount}}</p>
-            <div>{{isOrganic}}</div>
         </section>
     </script>
 </head>
@@ -35,9 +37,9 @@
         <a id="landinghops" href="/compare"><img id="hops" src="styles/icons/hops.svg"></a>
     </section>
     <main id="hide_main" class="remove_me">
-        <h1>INDEX.HTML</h1>
+        <h1></h1>
         <p><a href="/about">About</a></p>
-        <div id="search_tab" href="/search">
+        <div id="search_tab">
             <form id="search_form" action="search/">
                 <fieldset id="button_choice">
                     <input id="choice1" type="text" name="search" placeholder="Enter">
@@ -79,7 +81,25 @@
         </div>
     </main>
     <section id="about" class="remove_me">
-        <h1>About Page</h1>
+        <h1>About Team 4</h1>
+        <div id="daddy_div">
+            <div class="name_div">
+            <div id="shane" class="profile"><img src="styles/icons/Shane.jpg"></div>
+            <h1 class="profile">Shane</h1>
+            <p class="bio">My Name is Shane Moyo, thank you for visiting my page. I am 25 years old, I was born in Portland, Oregon on July 18th 1992. I am a student at Portland State University as well as Alchemy Code Lab!</p>
+            </div>
+            <div class="name_div">
+            <div id="zach" class="profile"><img src="styles/icons/Zach.jpg"></div>
+            <h1 class="profile">Zach</h1>
+            <p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue erat a magna eleifend, eu sagittis erat luctus. Nulla eget cursus turpis. Cras at eros consequat, feugiat felis vitae, maximus nisi. In hac habitasse platea dictumst. Donec pulvinar sagittis hendrerit.</p>
+            </div>
+            <div class="name_div">
+            <div id="eli" class="profile"><img src="styles/icons/Eli.png"></div>
+            <h1 class="profile">Eli</h1>
+            <p class="bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue erat a magna eleifend, eu sagittis erat luctus. Nulla eget cursus turpis. Cras at eros consequat, feugiat felis vitae, maximus nisi. In hac habitasse platea dictumst. Donec pulvinar sagittis hendrerit. Donec molestie congue quam. Aliquam convallis justo non quam condimentum bibendum. Quisque eget erat eros. Maecenas vulputate orci quis sodales semper. Phasellus elementum urna sed odio sollicitudin tincidunt. Etiam in massa nibh. Sed ut facilisis lacus. Nulla facilisi. Sed porta sapien vulputate, laoreet tellus vel, pulvinar massa. Ut convallis risus elit, a iaculis tellus convallis vel. Duis euismod sem risus, vel lobortis purus tempor non.</p>
+            </div>
+        </div>
+        
     </section>
     <!-- ============================= Scripts for Libaries ======================================= -->
     <script src="vendors/jquery-3.2.1.js"></script>

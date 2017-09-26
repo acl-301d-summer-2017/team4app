@@ -51,7 +51,6 @@ Beer.prototype.addToArr = function () {
 //Creates an appends to two duplicate option elemnts corresponding to the name
 //of the Beer object instance then appends one to each select form. 
 Beer.prototype.addToOptions = function () {
-    console.log(Beer.all, 'something');
     var $option = $('<option></option>').text(this.name);
     var $option2 = $('<option></option>').text(this.name);
     $('#select_one').append($option);
